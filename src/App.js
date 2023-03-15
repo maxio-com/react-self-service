@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
 
-function App() {
+import Maxio from '@maxio-com/self-service';
+
+export default function App() {
+    useEffect(() => {
+        let componentsFactory = new window.Maxio.Components({
+            i18nSettings: {
+                loadPath: 'https://link-to-translations.com/{{ns}}.json',
+                language: 'en',
+            },
+            accessTokenUrl: 'https://linkt-to-auth-endpoint.com/',
+            onAuthenticationRequest: () => ({
+                customHeader: 'customHeaderValue',
+            }),
+            apiUrl: 'https://link-to-api-url.com/',
+        });
+
+        componentsFactory.create('customer-details').render('#root');
+    }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div id={'root'}/>
   );
 }
 
-export default App;

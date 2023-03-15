@@ -1,8 +1,9 @@
 {
-  "name": "untitled1",
+  "name": "react-self-service-example",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@maxio-com/self-service": "^1.7.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
