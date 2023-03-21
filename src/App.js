@@ -1,22 +1,23 @@
 import React, {useEffect} from 'react';
 
-import Maxio from '@maxio-com/self-service';
+import {Components} from '@maxio-com/self-service';
 
 export default function App() {
     useEffect(() => {
-        let componentsFactory = new window.Maxio.Components({
+        let componentsFactory = new Components({
             i18nSettings: {
-                loadPath: 'https://link-to-translations.com/{{ns}}.json',
+                loadPath: 'https://staging-static.keen.io/ruc/en/{{ns}}.json',
                 language: 'en',
             },
-            accessTokenUrl: 'https://linkt-to-auth-endpoint.com/',
+            accessTokenUrl:
+                'https://chargifyapiadaptermock.us-west-2.test.aws.keen.io/merchant/auth?customer=pine-solutions-demo',
             onAuthenticationRequest: () => ({
                 customHeader: 'customHeaderValue',
             }),
-            apiUrl: 'https://link-to-api-url.com/',
+            apiUrl: 'https://selfservice.us-west-2.test.aws.keen.io/api',
         });
 
-        componentsFactory.create('customer-details').render('#root');
+        componentsFactory.create('subscriptions-manager').render('#root');
     }, []);
   return (
       <div id={'root'}/>
