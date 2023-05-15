@@ -14,7 +14,7 @@ export default function App() {
             onAuthenticationRequest: () => ({
                 customHeader: 'customHeaderValue',
             }),
-            apiUrl: 'https://selfservice.us-west-2.test.aws.keen.io/api',
+            apiUrl: 'https://selfservice.maxio.com/api',
         });
 
         componentsFactory.create('subscriptions-manager').render('#root');
