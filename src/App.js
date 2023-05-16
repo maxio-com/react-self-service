@@ -14,7 +14,7 @@ export default function App() {
             onAuthenticationRequest: () => ({
                 customHeader: 'customHeaderValue',
             }),
-            apiUrl: 'https://selfservice.maxio.com/api',
+            apiUrl: 'https://selfservice.staging.maxio.com/api',
         });
 
         componentsFactory.create('subscriptions-manager').render('#root');
