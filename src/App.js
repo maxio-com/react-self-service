@@ -19,6 +19,8 @@ export default function App() {
 
         componentsFactory.create('subscriptions-manager').render('#root');
     }, []);
-    return null;
+  return (
+      <div id={'root'}/>
+  );
 }
 
