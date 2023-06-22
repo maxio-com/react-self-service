@@ -10,11 +10,10 @@ export default function App() {
                 language: 'en',
             },
             accessTokenUrl:
-                'https://chargifyapiadaptermock.us-west-2.test.aws.keen.io/merchant/auth?customer=pine-solutions-demo',
+                'https://example.com/your-authentication-endpoint', // REPLACE WITH YOUR AUTHENTICATION ENDPOINT URL
             onAuthenticationRequest: () => ({
                 customHeader: 'customHeaderValue',
             }),
-            apiUrl: 'https://selfservice.staging.maxio.com/api',
         });
 
         componentsFactory.create('subscriptions-manager').render('#root');
